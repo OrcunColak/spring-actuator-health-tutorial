@@ -10,8 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
 @Configuration
 public class HealthConfig {
 
-    // http://localhost:8080/actuator/health/
-    // http://localhost:8080/actuator/health/random
+    // http://localhost:8081/actuator/health/
+    // http://localhost:8081/actuator/health/random
     @Bean
     public HealthIndicator randomHealthIndicator() {
         return () -> {
