@@ -1,4 +1,4 @@
-package com.colak.springactuatorhealthtutorial.config;
+package com.colak.springtutorial.config;
 
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
@@ -24,4 +24,19 @@ public class HealthConfig {
             return status.withDetail("chance", chance).build();
         };
     }
+
+    // @Bean
+    // public HealthIndicator dataSourceHealthIndicator(DataSource dataSource) {
+    //     return () -> {
+    //         try (Connection connection = dataSource.getConnection()) {
+    //             if (connection.isValid(1000)) {
+    //                 return Health.up().withDetail("database", "up").build();
+    //             } else {
+    //                 return Health.down().withDetail("database", "down").build();
+    //             }
+    //         } catch (SQLException e) {
+    //             return Health.down(e).build();
+    //         }
+    //     };
+    // }
 }
