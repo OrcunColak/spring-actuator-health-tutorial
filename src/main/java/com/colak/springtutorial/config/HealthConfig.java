@@ -12,16 +12,17 @@ public class HealthConfig {
 
     // http://localhost:8081/actuator - Shows all endpoints
     // http://localhost:8081/actuator/health/ - Shows all health indicators
-    // http://localhost:8081/actuator/health/random - Shows my custom health indicator
+    // http://localhost:8081/actuator/health/random - Shows also my custom health indicator
+    // Custom HealthIndicator
     @Bean
     public HealthIndicator randomHealthIndicator() {
         return () -> {
             double chance = ThreadLocalRandom.current().nextDouble();
-            Health.Builder status = Health.up();
+            Health.Builder builder = Health.up();
             if (chance > 0.9) {
-                status = Health.down();
+                builder = Health.down();
             }
-            return status.withDetail("chance", chance).build();
+            return builder.withDetail("chance", chance).build();
         };
     }
 
