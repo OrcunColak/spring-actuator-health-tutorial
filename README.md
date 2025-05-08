@@ -1,6 +1,9 @@
 # Read me
 
-Only one health indicator down makes the whole application's health status down
+Only one health indicator down makes the whole application's health status down  
+
+For custom health indictors Also see  
+https://medium.com/@bytewise010/mastering-custom-health-indicators-with-spring-boot-actuator-9bad71ebdcfa
 
 # Actuator Port
 
